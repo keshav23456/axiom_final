@@ -1,0 +1,320 @@
+@import '../styles/theme.css';
+
+/* Container for the Events page */
+.events-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(var(--spacing-xl) + 60px) var(--spacing-md) var(--spacing-lg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  text-align: center;
+  background: transparent;
+}
+
+/* Page heading */
+.events-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: var(--font-tech);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  animation: fadeIn 1.5s ease;
+}
+
+.events-heading::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  bottom: -10px;
+  left: 20%;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+}
+
+/* Description text */
+.events-description {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.8;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-family: var(--font-secondary);
+  animation: fadeInUp 1.8s ease;
+}
+
+/* Events list container */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+/* Event section */
+.event-section {
+  background: var(--background-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  width: 100%;
+  box-shadow: var(--shadow-light);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-section:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-heavy);
+  background: var(--background-card-hover);
+  border-color: rgba(var(--primary-color-rgb), 0.3);
+}
+
+/* Event header */
+.event-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Event title */
+.event-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-color);
+  font-family: var(--font-tech);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  padding-bottom: var(--spacing-sm);
+}
+
+.event-title::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background: var(--primary-gradient);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--transition-normal);
+}
+
+.event-section:hover .event-title::after {
+  width: 120px;
+}
+
+/* Event date and location */
+.event-date-location {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-sm);
+}
+
+.event-date, .event-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Event description */
+.event-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  max-width: 900px;
+}
+
+/* Media row title */
+.media-row-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  color: var(--primary-color);
+  font-family: var(--font-tech);
+  position: relative;
+  display: inline-block;
+}
+
+.media-row-title::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  bottom: -8px;
+  left: 15%;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+}
+
+/* Image and video rows */
+.event-images-row,
+.event-videos-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  width: 100%;
+}
+
+/* Media item */
+.media-item {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  height: 200px;
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.media-item:hover {
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: var(--shadow-heavy);
+}
+
+/* Image and video styling */
+.media-item img,
+.media-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-normal);
+}
+
+.media-item:hover img,
+.media-item:hover video {
+  transform: scale(1.1);
+}
+
+/* Video item specific */
+.video-item {
+  height: auto;
+  min-height: 200px;
+}
+
+/* Media item overlay effect */
+.media-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 198, 255, 0.3), rgba(0, 0, 0, 0.5));
+  opacity: 0;
+  transition: var(--transition-normal);
+  z-index: 1;
+}
+
+.media-item:hover::before {
+  opacity: 1;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .events-heading {
+    font-size: 3.5rem;
+  }
+  
+  .event-title {
+    font-size: 1.8rem;
+  }
+  
+  .event-images-row,
+  .event-videos-row {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .events-heading {
+    font-size: 2.5rem;
+  }
+  
+  .events-description {
+    font-size: 1.1rem;
+  }
+  
+  .event-title {
+    font-size: 1.5rem;
+  }
+  
+  .event-images-row,
+  .event-videos-row {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .media-item {
+    height: 150px;
+  }
+  
+  .event-date-location {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .events-heading {
+    font-size: 2rem;
+  }
+  
+  .events-description {
+    font-size: 1rem;
+  }
+  
+  .event-title {
+    font-size: 1.3rem;
+  }
+}

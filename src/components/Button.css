@@ -1,0 +1,104 @@
+@import '../styles/theme.css';
+
+.custom-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border: none;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.custom-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+.custom-button:active {
+  transform: translateY(-1px);
+}
+
+/* Button sizes */
+.custom-button.small {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.custom-button.large {
+  padding: 14px 30px;
+  font-size: 1.1rem;
+}
+
+/* Button variants */
+.custom-button.primary {
+  background: var(--primary-gradient);
+  color: var(--text-primary);
+}
+
+.custom-button.primary:hover {
+  box-shadow: 0 5px 15px rgba(0, 198, 255, 0.4);
+}
+
+.custom-button.secondary {
+  background: var(--secondary-color);
+  color: #000;
+}
+
+.custom-button.secondary:hover {
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+}
+
+.custom-button.outline {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.custom-button.outline:hover {
+  background: rgba(0, 198, 255, 0.1);
+}
+
+.custom-button.ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+}
+
+.custom-button.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Button with icon */
+.custom-button .button-icon {
+  margin-right: 8px;
+}
+
+.custom-button.icon-right .button-icon {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Full width button */
+.custom-button.full-width {
+  width: 100%;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-button {
+    padding: 10px 20px;
+  }
+  
+  .custom-button.large {
+    padding: 12px 24px;
+  }
+}

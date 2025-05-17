@@ -1,0 +1,5 @@
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#1a1a1a"/>
+  <path d="M150,50 L175,100 L200,150 L150,150 L100,150 L125,100 Z" fill="#00c6ff"/>
+  <text x="150" y="175" font-family="Arial" font-size="16" fill="white" text-anchor="middle">AXIOM</text>
+</svg>

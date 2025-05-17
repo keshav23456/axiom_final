@@ -1,0 +1,148 @@
+@import '../styles/theme.css';
+
+/* Newsletter Container */
+.newsletter-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Coming Soon Section */
+.coming-soon-section {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  padding: var(--spacing-xl);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-medium);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Coming Soon Title */
+.coming-soon-title {
+  font-size: 4rem;
+  color: var(--text-primary);
+  font-family: var(--font-tech);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: var(--spacing-lg);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowPulse 3s infinite alternate;
+}
+
+/* Newsletter Description */
+.newsletter-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  animation: fadeInUp 2s ease-in-out;
+}
+
+/* Background Elements */
+.animated-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  left: -150px;
+  animation: float 15s infinite alternate ease-in-out;
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  right: -100px;
+  animation: float 12s infinite alternate-reverse ease-in-out;
+}
+
+.circle-3 {
+  width: 150px;
+  height: 150px;
+  top: 20%;
+  right: 10%;
+  animation: float 10s infinite alternate ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px rgba(0, 198, 255, 0.5), 0 0 10px rgba(0, 198, 255, 0.3);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(0, 198, 255, 0.8), 0 0 30px rgba(0, 198, 255, 0.5);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+  100% {
+    transform: translate(-20px, 10px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .coming-soon-title {
+    font-size: 3rem;
+  }
+  
+  .newsletter-description {
+    font-size: 1.1rem;
+  }
+  
+  .coming-soon-section {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-title {
+    font-size: 2.5rem;
+  }
+}
